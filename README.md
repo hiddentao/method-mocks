@@ -51,10 +51,11 @@ describe('.alertUser()', () => {
     expect(mock).toHaveBeenCalledWith('test')
   })
 })
+```
 
 ## Installation
 
-```js
+```shell
 npm i method-mocks
 ```
 
