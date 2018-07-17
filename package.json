@@ -1,0 +1,49 @@
+{
+  "name": "method-mocks",
+  "version": "1.0.0",
+  "description": "Works with existing mocking and testing frameworks (e.g. Jest) to make method mocking easier.",
+  "main": "index.js",
+  "repository": "https://github.com/hiddentao/method-mocks.git",
+  "author": "Ramesh Nair <ram@hiddentao.com>",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "src/*.js",
+    "dist/*.js"
+  ],
+  "scripts": {
+    "build": "babel --ignore test.js,__fixtures__ --out-dir dist src",
+    "prepublishOnly": "yarn lint && yarn test && yarn build",
+    "lint": "eslint ./src",
+    "test": "jest",
+    "test:coverage": "jest --coverage --collectCoverageFrom=src/**/*.js --coverageDirectory=coverage/",
+    "test:watch": "jest --watch",
+    "codecov": "codecov"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-jest-assertions": "^0.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "codecov": "^3.0.2",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^21.2.1"
+  },
+  "jest": {
+    "roots": [
+      "./src/"
+    ],
+    "testMatch": [
+      "**/?(*.)test.js"
+    ]
+  }
+}
