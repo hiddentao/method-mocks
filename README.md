@@ -19,12 +19,11 @@ export const alertUser = msg => Alert.alert(msg)
 ```js
 // App.test.js
 
-import { setupMethodMocks } from 'method-mocks'
 import { alertUser } from './App'
 
 // This will get hoisted to the top at runtime by Jest
 jest.mock('react-native', () => ({
-  Alert: setupMethodMocks({
+  Alert: require('method-mocks').setupMethodMocks({
     SOME_KEY: 1
   })
 }))
