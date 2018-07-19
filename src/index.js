@@ -12,7 +12,7 @@ export const setupMethodMocks = (obj = {}) => {
 
     obj[methodName] = mockFn.bind(obj)
 
-    return obj
+    return mockFn
   }
 
   obj.clearMethodMock = methodName => {
@@ -23,16 +23,12 @@ export const setupMethodMocks = (obj = {}) => {
 
       delete obj.__methodMocks[methodName]
     }
-
-    return obj
   }
 
   obj.clearAllMethodMocks = () => {
     Object.keys(obj.__methodMocks).forEach(methodName => {
       obj.clearMethodMock(methodName)
     })
-
-    return obj
   }
 
   return obj

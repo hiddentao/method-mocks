@@ -32,11 +32,9 @@ describe('.alertUser()', () => {
   let mock
 
   beforeEach(() => {
-    mock = jest.fn()
-
     /* Even though we're mocking an external module we're able to set the
     mock for a given method on each iteration */
-    Alert.setMethodMock('alert', mock)
+    mock = Alert.setMethodMock('alert', jest.fn())
   })
 
   afterEach(() => {
@@ -75,7 +73,7 @@ This will add the following methods to the passed-in object:
    * @param {String} methodName The name of the method to mock.
    * @param {Function} mockFn The mock function.
    *
-   * @return the object
+   * @return the mock function
    */
   setMethodMock: (methodName, mockFn),
 
@@ -86,8 +84,6 @@ This will add the following methods to the passed-in object:
    * original implementation will be restored, else the method will be deleted.
    *
    * @param {String} methodName The name of the method.
-   *
-   * @return the object
    */
   clearMethodMock: (methodName),
 
@@ -96,8 +92,6 @@ This will add the following methods to the passed-in object:
    *
    * This is equivalent to calling `clearMethodMock()` for each mocked method,
    * one-by-one.
-   *
-   * @return the object
    */
   clearAllMethodMocks: ()
 }
