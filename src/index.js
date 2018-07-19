@@ -1,4 +1,4 @@
-export const setupMethodMocks = obj => {
+export const setupMethodMocks = (obj = {}) => {
   obj.__methodMocks = {}
 
   obj.setMethodMock = (methodName, mockFn) => {

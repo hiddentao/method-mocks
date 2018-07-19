@@ -11,6 +11,14 @@ describe('.setupMethodMocks()', () => {
     expect(obj.clearAllMethodMocks).toBeInstanceOf(Function)
   })
 
+  it('adds the methods to empty object', () => {
+    const obj = setupMethodMocks()
+
+    expect(obj.setMethodMock).toBeInstanceOf(Function)
+    expect(obj.clearMethodMock).toBeInstanceOf(Function)
+    expect(obj.clearAllMethodMocks).toBeInstanceOf(Function)
+  })
+
   describe('sets up an object', () => {
     it('which can have a mockable method', () => {
       const obj = setupMethodMocks({
