@@ -1,6 +1,6 @@
 {
   "name": "method-mocks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Works with existing mocking and testing frameworks (e.g. Jest) to make method mocking easier.",
   "main": "index.js",
   "repository": "https://github.com/hiddentao/method-mocks.git",
